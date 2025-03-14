@@ -59,14 +59,19 @@ static int[] TwoSum(int[] nums, int target)
         int dizideAranilacakSayi = target - nums[index];//targettan mevcut dizi elemanını çıkaralım.
                                                         //Örneğin 500 target, şuanki dizi elemanı 100, 500-100 = 400 
 
+        
 
         //Önce kümede dizide aranilacak sayi var mı diye kontrol ediyoruz
         if (kume.TryGetValue(dizideAranilacakSayi, out int value))
         {
-            return[value, index ];
+            //burada hem eski varyasyonu hem yeniyi dönmem lazımdı yetiştiremedim
+            Console.WriteLine($"[{value}, {index}]");//varsa dönüyoruz
+            return [value, index];//varsa dönüyoruz
+          
+         
         }
 
-        kume.Add(index, dizideAranilacakSayi);//Küme dictionary'sine aralanilacak sayıyı ve indexi atıyoruz.
+        kume.Add(index, dizideAranilacakSayi);//yoksa küme dictionary'sine aralanilacak sayıyı ve indexi atıyoruz.
 
 
 
